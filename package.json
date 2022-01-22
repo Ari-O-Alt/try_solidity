@@ -1,0 +1,19 @@
+{
+  "name": "try_solidity",
+  "version": "1.0.0",
+  "description": "- **VS Code** OR **[Remix](https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js)** - an IDE which lets us write **Solidity** code without setting up a local environment.\r ##### Concepts and terms:\r - **Solidity** - a contract-oriented, high-level programming language used for implementing smart contracts\r - **Smart contracts** - code that gets executed on the Blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ari-O-Alt/try_solidity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ari-O-Alt/try_solidity/issues"
+  },
+  "homepage": "https://github.com/Ari-O-Alt/try_solidity#readme"
+}
