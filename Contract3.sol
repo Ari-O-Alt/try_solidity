@@ -20,6 +20,7 @@ contract MyContractV3 {
        incrementPeopleCount();
     }
 
+    // this is the equivalent of a private function
     function incrementPeopleCount() internal {
         peopleCount++;
     }
