@@ -10,10 +10,20 @@ contract MyContractV4 {
     uint256 public peopleCount;
     // this is a Solidity data type - it's like an address on the Blockchain
     address owner;
-    // we create a function modifier called ownerOnly
+    // we create a variable for the opening time; this is stored in seconds (see Epoch Time converter)
+    uint256 openingTime = 1643718290;
+
+    // we create a function modifier called ownerOnly; this will let us run the addPerson function only if the require block returns true
     modifier ownerOnly() {
-        // this is Solidity specific and lets us know which address is calling this function
+        // msg is Solidity specific global variable; the "sender" prop lets us know which address is calling this function
         require(msg.sender == owner);
+        _;
+    }
+
+    // modifier that will let us run addPerson only if the condition inside the require block is true
+    modifier onlyWhileOpen() {
+        // block is a Solidity global variable; the "timestamp" prop lets us know the current block timestamp
+        require(block.timestamp >= openingTime);
         _;
     }
 
@@ -28,7 +38,7 @@ contract MyContractV4 {
         owner = msg.sender;
     }
 
-    function addPerson(string memory _firstName, string memory _lastName) public ownerOnly {
+    function addPerson(string memory _firstName, string memory _lastName) public ownerOnly onlyWhileOpen{
        incrementPeopleCount();
        people[peopleCount] = Person(peopleCount, _firstName, _lastName);
        
