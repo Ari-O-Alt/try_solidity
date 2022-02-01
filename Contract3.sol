@@ -17,7 +17,11 @@ contract MyContractV3 {
 
     function addPerson(string memory _firstName, string memory _lastName) public {
        people.push(Person(_firstName, _lastName));
-       peopleCount+=1;
+       incrementPeopleCount();
+    }
+
+    function incrementPeopleCount() internal {
+        peopleCount++;
     }
  
 }
